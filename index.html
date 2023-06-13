@@ -11,7 +11,8 @@
         <h2>{{ titulo }}</h2>
         <h3>{{ saludo }}</h3>
         <div v-html="estructura"></div>
-        <button v-bind:class="color_rojo"> presioname</button><br>
+        <button v-bind:class="color_azul"> presioname</button><br>
+        <a v-bind:href="rutaCurriculo" class="btn btn-danger">Ir a Curriculo</a>
         <hr>
         <img v-bind:src="imagen_mia"  v-bind:alt="nombre_imagen_mia">
         <hr><br>
@@ -47,11 +48,12 @@
                     despedida: 'Me voy',
                     mensaje: '',
                     estructura: `<div><h1>Esta es una despedida</h1><p>Esto tiene código html </p></div>`,
-                    color_rojo: 'btn btn-danger',
+                    color_azul: 'btn btn-primary',
                     imagen_mia: 'img/seigfreid.jpg',
                     nombre_imagen_mia: 'seigfreid',
                     nombre: 'Elfar Didier Morantes Sanchez',
-                    likes: 0
+                    likes: 0,
+                    rutaCurriculo: 'curriculum.html'
                 }
             },
             methods:{
@@ -63,7 +65,8 @@
                     if(this.likes > 0){
                         this.likes--;
                     }
-                }
+                },
+
             }
         }).mount('#app');
     </script>
