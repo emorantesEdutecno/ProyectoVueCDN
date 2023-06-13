@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <img v-bind:src="foto" alt="nombres" v-bind:class="claseImagen" >
+                    <p>{{correo}}</p>
+                    <a v-bind:href="linkedin">{{linkedin}}</a>
+                    <hr>
+                    <h1>¿Quien Soy?</h1>
+                    <p>{{perfil}}</p>
+                    <hr>
+                    <h1>Lenguajes de Programación</h1>
+                    <p>javascript: {{javascript}}</p>
+                    <p>php: {{php}}</p>
+                    <p>java: {{java}}</p>
+                    <p>python: {{python}}</p>
+                    <p>C: {{C}}</p>
+                    <p>C++: {{Cplusplus}}</p>
+                    <p>C#: {{Csharp}}</p>
+                    <p>perl: {{perl}}</p>
+                    <p>ruby: {{ruby}}</p>
+                    <hr>
+                    <h1>Referencias</h1>
+                    <p v-for="lengua in idiomas">{{lengua}}</p>
+
+                </div>
+
+
+
+
+                <div class="col-md-8">
+                    <h1>{{nombres}}</h1>
+                    <h1>{{apellidos}}</h1>
+                    <h2>{{ puesto }}</h2>
+                    <button v-on:click="mostrarDatos">Mostrar</button>
+                    <button v-on:click="ocultarDatos">Ocultar</button>
+                    <hr>
+                    <h1>Experiencia Profesional</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>{{fecha1}}</p>
+                                <p>{{ciudad1}}</p>
+                                <hr>
+                                <p>{{fecha2}}</p>
+                                <p>{{ciudad2}}</p>
+                            </div>
+                            <div class="col-md-9">
+                                <p>{{empresa1}}</p>
+                                <p>{{tarea1}}</p>
+                                <hr>
+                                <p>{{empresa2}}</p>
+                                <p>{{tarea2}}</p>                        
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h1>Educación</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>{{año1}}</p>
+                                <p>{{pais1}}</p>
+                                <hr>
+                                <p>{{año2}}</p>
+                                <p>{{pais2}}</p>
+                            </div>
+                            <div class="col-md-9">
+                                <p>{{titulo1}}</p>
+                                <p>{{universidad1}}</p>
+                                <hr>
+                                <p>{{titulo2}}</p>
+                                <p>{{universidad2}}</p>                        
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        // Aqui va el código vueJS
+
+        const { createApp } = Vue;
+        createApp({
+            data(){
+                return{
+                    nombres: 'Elfar Didier',
+                    apellidos: 'Morantes Sanchez',
+                    foto: 'img/profe.jpg',
+                    correo:'emorantes@edutecno.com',
+                    telefono: '3324224342',
+                    linkedin: 'https://www.linkedin.com/in/elfar-didier-morantes-s%C3%A1nchez/',
+                    perfil: 'Ingeniero Electrónico, Ingeniero de Software, Mg en E-Learning, Desarrollador Senior Front End con VueJS',
+                    javascript :'* * * * *',
+                    php: '* * * * *',
+                    java: '* * * * *',
+                    python: '* * * * *',
+                    C: '* * * * *',
+                    Cplusplus:'* * * * *',
+                    Csharp: '* * *',
+                    perl: '* * * ',
+                    ruby: '* * *',
+                    idiomas: ['español', 'Ingles'],
+                    puesto: 'Desarrollador Front End',
+                    fecha1: 'Febrero 2023',
+                    ciudad1: 'Santiago-Chile',
+                    empresa1:'Edutecno',
+                    tarea1:'Orientar bootcamps de Front End con el Framework de Vuejs',
+                    fecha2: 'Febrero 2020',
+                    ciudad2: 'Bogota-Colombia',
+                    empresa2:'DXC Technologies',
+                    tarea2:'Desarrollador Front End con el framework de angular',
+                    año1: '2009',
+                    pais1: 'Colombia',
+                    titulo1: 'Ingeniero Electrónico',
+                    universidad1: 'Universidad Autónoma de Colombia',
+                    año2: '2023',
+                    pais2: 'España',
+                    titulo2: 'MG E-Learning',
+                    universidad2: 'Universitat Oberta de Catalunya',
+                    claseImagen:'img-fluid'
+
+
+
+
+
+                }
+            },
+            methods:{
+                mostrarDatos: function(){
+                    this.claseImagen = 'img-fluid d-block';
+
+                },
+                ocultarDatos: function(){
+                    this.claseImagen = 'img-fluid d-none';
+                }
+            }
+        }).mount('#app');
+    </script>
+
+
+</body>
+</html>
